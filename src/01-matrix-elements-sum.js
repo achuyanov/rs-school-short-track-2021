@@ -24,7 +24,7 @@ function getMatrixElementsSum(arr) {
     for (let j = 0; j < n2; j++) {
       if (i === 0) {
         s += arr[i][j];
-      } else if (arr[i][j - 1] !== 0) {
+      } else if (arr[i - 1][j] !== 0) {
         s += arr[i][j];
       }
     }
