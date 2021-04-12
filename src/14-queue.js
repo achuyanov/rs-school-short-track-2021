@@ -11,17 +11,36 @@
  *
  */
 
+ //function ListNode(x) {
+ // this.value = x;
+ // this.next = null;
+//}
+
+const ListNode = require('../extensions/list-node');
+
 class Queue {
-  get size() {
-    throw new Error('Not implemented');
+  constructor() {
+    this.head = new ListNode();
+    this.tail = this.head;
+    this.count = 0;
   }
 
-  enqueue(/* element */) {
-    throw new Error('Not implemented');
+  get size() {
+    return this.count;
+  }
+
+  enqueue(el) {
+    this.tail.value = el;
+    this.tail.next = new ListNode();
+    this.tail = this.tail.next;
+    this.count++;
   }
 
   dequeue() {
-    throw new Error('Not implemented');
+    let val = this.head.value;
+    this.head = this.head.next;
+    this.count--;
+    return val;
   }
 }
 
