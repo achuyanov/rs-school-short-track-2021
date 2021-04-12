@@ -9,13 +9,18 @@
  *
  */
 function encodeLine(str) {
-  let arr=str.split('');
+  const arr = str.split('');
   let n = 1;
   let tmp = '';
-  arr.forEach( (el,i) => {if (arr[i+1]===el) {n+=1} else {tmp += (n>1)?n+el:el;n=1;}})
+  arr.forEach((el, i) => {
+    if (arr[i + 1] === el) {
+      n += 1;
+    } else {
+      tmp += (n > 1) ? n + el : el;
+      n = 1;
+    }
+  });
   return tmp;
 }
 
-
-//console.log(encodeLine('aaaatttt'));
 module.exports = encodeLine;

@@ -22,10 +22,9 @@
  * ]
  */
 function minesweeper(arr) {
-
   const sizeHor = arr[0].length;
   const sizeVert = arr.length;
-  let ret = [];
+  const ret = [];
 
   const calcCol = (i, j, o = false) => {
     let sum = 0;
@@ -33,7 +32,7 @@ function minesweeper(arr) {
     if (j < sizeHor - 2) sum += arr[i][j + 1];
     if (o) sum += arr[i][j];
     return sum;
-  }
+  };
 
   const calcStr = (i, j) => {
     let sum = 0;
@@ -41,10 +40,10 @@ function minesweeper(arr) {
     if (i < sizeVert - 2) sum += calcCol(i + 1, j, true);
     sum += calcCol(i, j, false);
     return sum;
-  }
+  };
 
   for (let i = 0; i < sizeVert; i++) {
-    let strArr = [];
+    const strArr = [];
     for (let j = 0; j < sizeHor; j++) strArr.push(calcStr(i, j));
     ret.push(strArr);
   }

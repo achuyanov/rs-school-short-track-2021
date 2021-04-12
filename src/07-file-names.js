@@ -13,23 +13,24 @@
  * the output should be ["file", "file(1)", "image", "file(1)(1)", "file(2)"]
  *
  */
-function renameFiles(arr) {
+function renameFiles(array) {
   const addDuplicateIndex = (arr, el, pos) => {
-    let tst = arr.slice();
+    const tst = arr.slice();
     let idx = 1;
-    tst[pos] = "";
+    tst[pos] = '';
     tst.forEach((name, i) => {
-      if (name == el) {
+      if (name === el) {
+        // eslint-disable-next-line no-param-reassign
         arr[i] += `(${idx})`;
-        idx +=1;
+        idx += 1;
       }
-    })
+    });
     return true;
-  }
+  };
 
-  arr.forEach((el, i) => addDuplicateIndex(arr, el, i) );
+  array.forEach((el, i) => addDuplicateIndex(array, el, i));
 
-  return arr;
+  return array;
 }
 
 module.exports = renameFiles;

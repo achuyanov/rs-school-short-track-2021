@@ -10,5 +10,4 @@
  */
 const getEmailDomain = (email) => email.split('@').pop();
 
-
 module.exports = getEmailDomain;

@@ -11,10 +11,10 @@
  *
  */
 
- //function ListNode(x) {
- // this.value = x;
- // this.next = null;
-//}
+// function ListNode(x) {
+// this.value = x;
+// this.next = null;
+// }
 
 const ListNode = require('../extensions/list-node');
 
@@ -37,7 +37,7 @@ class Queue {
   }
 
   dequeue() {
-    let val = this.head.value;
+    const val = this.head.value;
     this.head = this.head.next;
     this.count--;
     return val;

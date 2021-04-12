@@ -10,9 +10,9 @@
  *
  */
 function deleteDigit(n) {
-  let str = String(n);
-  const min = Math.min(...str.split('').map(x=>Number(x)));
-  return +str.replace(String(min),'');
+  const str = String(n);
+  const min = Math.min(...str.split('').map((x) => Number(x)));
+  return +str.replace(String(min), '');
 }
 
 module.exports = deleteDigit;

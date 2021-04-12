@@ -18,7 +18,7 @@ function findIndex(array, val) {
 
   while (pos >= 0) {
     if (array[pos] === val) return pos;
-    if (val < array[pos]) {end = pos} else {start = pos}
+    if (val < array[pos]) { end = pos; } else { start = pos; }
     pos = Math.floor((start + end) / 2);
   }
 
