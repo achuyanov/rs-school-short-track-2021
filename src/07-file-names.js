@@ -13,8 +13,23 @@
  * the output should be ["file", "file(1)", "image", "file(1)(1)", "file(2)"]
  *
  */
-function renameFiles(/* names */) {
-  throw new Error('Not implemented');
+function renameFiles(arr) {
+  const addDuplicateIndex = (arr, el, pos) => {
+    let tst = arr.slice();
+    let idx = 1;
+    tst[pos] = "";
+    tst.forEach((name, i) => {
+      if (name == el) {
+        arr[i] += `(${idx})`;
+        idx +=1;
+      }
+    })
+    return true;
+  }
+
+  arr.forEach((el, i) => addDuplicateIndex(arr, el, i) );
+
+  return arr;
 }
 
 module.exports = renameFiles;
